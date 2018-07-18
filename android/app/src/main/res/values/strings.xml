@@ -1,3 +1,8 @@
 <resources>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey"></string>
     <string name="app_name">Boilerplate</string>
+    <string name="fb_app_id">256587008200581</string>
+    <string name="ak_client_token">639fd6e248147f120c1a6c68229d491d</string>
+    <string name="CodePushPublicKey"></string>
+    <string name="mixpanel">9a49bc52316165a56380eab31632511a</string>
 </resources>
