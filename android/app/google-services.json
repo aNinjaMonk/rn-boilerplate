@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "963652106045",
+    "firebase_url": "https://boilerplate-e3672.firebaseio.com",
+    "project_id": "boilerplate-e3672",
+    "storage_bucket": "boilerplate-e3672.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:963652106045:android:d662a78853b43a2e",
+        "android_client_info": {
+          "package_name": "com.boilerplate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "963652106045-cet635b72ei9fnm87rko06bfdq7fps5u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA32AmJb2IRTRnXhT9HXJNZCitWeDlWII0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -11,9 +11,7 @@ import {
   Button
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { ApplicationStyles, Colors, Metrics, Images } from '../Themes'
-//import CustomButton from '../Components/CustomButton';
-//import { deleteAll } from '../Api';
+import { ApplicationStyles, Colors, Metrics, Images } from '../Themes';
 
 const SharedPreferences = require('react-native-shared-preferences');
 const I18n = require('../I18n');
@@ -22,24 +20,14 @@ export default class Setting extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      account: ''
     };
-    this.props.navigator.toggleTabs({
-      to: 'hidden', // required, 'hidden' = hide tab bar, 'shown' = show tab bar
-      animated: true
-    });
 
-    SharedPreferences.setItem('language', 'en');
-  }
-  logout = () => {
-    //deleteAll();
+    //SharedPreferences.setItem('language', 'en');
   }
   render() {
     return (
       <View style={styles.container}>
-        <CustomButton text={I18n.t('logout')} iconName="sign-out" onPress={this.logout} />
-        <Text>Language</Text>
-        <Text>English</Text>
+        <Text>Settings</Text>
       </View>
     );
   }
@@ -49,12 +37,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.snow
-  },
-  button: {
-    margin: 50,
-    padding: 20
-  },
-  inputControl: {
-    margin: 10
   }
 });

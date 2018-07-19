@@ -2,13 +2,14 @@
 Template for Mobile App
 
 Code Organization :
-- 
+-
 
 Plugins installed already
 - react-native-i18n - Language Translation.
 - react-native-mixpanel - Analytics
 - react-native-animatable - Animation
 - moment - Date/Time
+- lodash - Javascript Utilities
 - react-native-navigation - Navigation
 - react-native-share - Sharing app.
 - validate.js - Forms Validation

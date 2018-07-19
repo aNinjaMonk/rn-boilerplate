@@ -23,16 +23,29 @@ class App extends Component {
 
   }
   startApp = () => {
+    const appStyle = {
+      tabBarBackgroundColor: Colors.primary,
+      navBarButtonColor: Colors.snow,
+      tabBarButtonColor: Colors.snow,
+      navBarTextColor: Colors.snow,
+      tabBarSelectedButtonColor: Colors.black,
+      navigationBarColor: Colors.primary,
+      navBarBackgroundColor: Colors.primary,
+      statusBarColor: Colors.primary,
+      tabFontFamily: Fonts.type.tab
+    };
     Navigation.startSingleScreenApp({
       screen: {
-        screen: 'screen.home',
+        screen: 'screen.login',
         title: '',
-        navigatorStyle: {
-          navBarHidden: true,
-          drawUnderNavBar: true,
-          navBarTransparent: true
-        },
-        navigatorButtons: {}
+        navigatorStyle: appStyle,
+        navigatorButtons: {
+          leftButtons: [{
+            id: 'sideMenu',
+            buttonColor: Colors.snow
+          }],
+          animated: true
+        }
       },
       passProps: {},
       animationType: 'fade',
