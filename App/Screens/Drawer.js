@@ -22,6 +22,7 @@ class Drawer extends Component {
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
   }
   componentDidMount() {
+    
   }
   onNavigatorEvent = (event) => {
     if (event.id === 'didAppear') {
