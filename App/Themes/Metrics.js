@@ -23,15 +23,15 @@ const metrics = {
     small: 20,
     medium: 30,
     large: 45,
-    xl: 50
+    xl: 50,
   },
   images: {
     small: 20,
     medium: 40,
     large: 60,
     logo: 200,
-    placeholder: 100
-  }
+    placeholder: 100,
+  },
 };
 
 export default metrics;

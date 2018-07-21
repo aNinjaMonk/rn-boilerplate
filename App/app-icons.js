@@ -13,7 +13,7 @@ const icons = {
   share: [Metrics.icons.medium, Colors.snow],
   filter: [Metrics.icons.medium, Colors.snow],
   plus: [Metrics.icons.medium, Colors.snow],
-  university: [Metrics.icons.medium, Colors.snow]
+  university: [Metrics.icons.medium, Colors.snow],
 };
 
 const defaultIconProvider = FontAwesome;
@@ -21,15 +21,15 @@ const replaceSuffixPattern = /--(active|big|small|very-big)/g;
 const iconsMap = {};
 const iconsLoaded = new Promise((resolve, reject) => {
   new Promise.all(
-    Object.keys(icons).map(iconName => {
+    Object.keys(icons).map((iconName) => {
       const Provider = icons[iconName][2] || defaultIconProvider; // Ionicons
       return Provider.getImageSource(
         iconName.replace(replaceSuffixPattern, ''),
         icons[iconName][0],
-        icons[iconName][1]
+        icons[iconName][1],
       );
-    })
-  ).then(sources => {
+    }),
+  ).then((sources) => {
     Object.keys(icons)
       .forEach((iconName, idx) => iconsMap[iconName] = sources[idx]);
 
@@ -39,6 +39,6 @@ const iconsLoaded = new Promise((resolve, reject) => {
 });
 
 export {
-    iconsMap,
-    iconsLoaded
+  iconsMap,
+  iconsLoaded,
 };

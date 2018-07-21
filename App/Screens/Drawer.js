@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, View, Text, Share, Alert } from 'react-native';
+import {
+  StyleSheet, View, Text, Share, Alert
+} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { Colors, Metrics, Images, Fonts, ApplicationStyles } from '../Themes';
 import moment from 'moment';
+import {
+  Colors, Metrics, Images, Fonts, ApplicationStyles
+} from '../Themes';
 
 const I18n = require('../I18n');
 
@@ -14,16 +18,18 @@ class Drawer extends Component {
       name: '',
       user: {
         name: '',
-        email: ''
+        email: '',
       },
-      date: ''
+      date: '',
     };
 
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
   }
+
   componentDidMount() {
-    
+
   }
+
   onNavigatorEvent = (event) => {
     if (event.id === 'didAppear') {
       this.forceUpdate();
@@ -33,21 +39,24 @@ class Drawer extends Component {
   openShare = () => {
     Share.share({
       message: I18n.t('shareMessage'),
-      title: I18n.t('shareTitle')
+      title: I18n.t('shareTitle'),
     });
   }
+
   openHelp = () => {
     this.props.navigator.handleDeepLink({
       link: 'lightbox.contact',
-      payload: I18n.t('setting')
+      payload: I18n.t('setting'),
     });
   }
+
   openSetting = () => {
     this.props.navigator.handleDeepLink({
       link: 'screen.setting',
       payload: I18n.t('setting')
     });
   }
+
   render() {
     const { date, name } = this.state;
     return (
@@ -80,41 +89,41 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: Metrics.drawerWidth,
-    backgroundColor: Colors.snow
+    backgroundColor: Colors.snow,
   },
   header: {
     flex: 0.2,
     width: Metrics.drawerWidth,
     backgroundColor: Colors.primary,
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   subheader: {
     flex: 0.9,
     flexDirection: 'column',
     marginLeft: Metrics.doubleBaseMargin,
-    marginBottom: Metrics.baseMargin
+    marginBottom: Metrics.baseMargin,
   },
   editButton: {
     flex: 0.1,
     margin: Metrics.doubleBaseMargin,
-    textAlignVertical: 'bottom'
+    textAlignVertical: 'bottom',
   },
   name: {
     ...Fonts.style.h5,
     flex: 0.9,
     color: Colors.snow,
     textAlignVertical: 'bottom',
-    marginBottom: Metrics.smallMargin
+    marginBottom: Metrics.smallMargin,
   },
   period: {
     flex: 0.2,
     fontSize: 12,
     fontStyle: 'italic',
-    color: Colors.snow
+    color: Colors.snow,
   },
   submenu: {
     flex: 0.65,
-    width: Metrics.drawerWidth
+    width: Metrics.drawerWidth,
   },
   menu: {
     flex: 0.15,
@@ -127,14 +136,14 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     paddingBottom: Metrics.marginHorizontal,
-    paddingTop: Metrics.doubleBaseMargin
+    paddingTop: Metrics.doubleBaseMargin,
   },
   menuButton: {
-    paddingBottom: Metrics.marginHorizontal
+    paddingBottom: Metrics.marginHorizontal,
   },
   menuText: {
     color: Colors.snow,
-    fontSize: Fonts.size.regular
+    fontSize: Fonts.size.regular,
   },
   optionItem: {
     flexDirection: 'row',
@@ -144,13 +153,13 @@ const styles = StyleSheet.create({
     paddingLeft: Metrics.doubleSection,
     backgroundColor: Colors.whitish,
     borderWidth: 0.2,
-    borderColor: Colors.hairline
+    borderColor: Colors.hairline,
   },
   optionText: {
     color: Colors.black,
     fontSize: Fonts.size.regular,
-    marginLeft: Metrics.doubleBaseMargin
-  }
+    marginLeft: Metrics.doubleBaseMargin,
+  },
 });
 
 export default Drawer;

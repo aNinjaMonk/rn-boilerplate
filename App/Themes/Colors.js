@@ -21,7 +21,7 @@ const colors = {
   banner: '#5F3E63',
   text: '#E0D7E5',
   black: '#000000',
-  hairline: '#8E8E8E'
+  hairline: '#8E8E8E',
 };
 
 export default colors;

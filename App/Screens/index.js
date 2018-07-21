@@ -6,7 +6,7 @@ import Login from './Login';
 import Drawer from './Drawer';
 import Playground from './Playground';
 
-export function registerScreens() {
+export default function registerScreens() {
   Navigation.registerComponent('screen.home', () => Home);
   Navigation.registerComponent('screen.Drawer', () => Drawer);
   Navigation.registerComponent('screen.playground', () => Playground);

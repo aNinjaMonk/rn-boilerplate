@@ -3,9 +3,11 @@ import {
   View,
   Text,
   StyleSheet,
-  StatusBar
-  } from 'react-native';
-import { Colors, Metrics, ApplicationStyles, Fonts } from '../Themes';
+  StatusBar,
+} from 'react-native';
+import {
+  Colors, Metrics, ApplicationStyles, Fonts,
+} from '../Themes';
 import Button from '../Components/Button';
 
 const I18n = require('../I18n');
@@ -52,12 +54,12 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: Metrics.baseMargin
+    borderRadius: Metrics.baseMargin,
   },
   text: {
     paddingTop: Metrics.doubleBaseMargin,
     fontSize: 16,
-    color: '#575757'
+    color: '#575757',
   },
   content: {
     flex: 0.8,
@@ -66,36 +68,36 @@ const styles = StyleSheet.create({
   },
   header: {
     ...Fonts.style.h6,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   house: {
     ...Fonts.style.h3,
     textAlign: 'center',
     color: Colors.primary,
     fontWeight: 'bold',
-    marginTop: Metrics.baseMargin
+    marginTop: Metrics.baseMargin,
   },
   cancel: {
     color: Colors.charcoal,
     fontWeight: 'bold',
     marginTop: Metrics.smallMargin + 2,
-    marginRight: Metrics.baseMargin
+    marginRight: Metrics.baseMargin,
   },
   buttons: {
     flex: 0.2,
     flexDirection: 'row',
     justifyContent: 'center',
-    paddingBottom: 20
+    paddingBottom: 20,
   },
   moreBtn: {
     flex: 0.5,
     backgroundColor: Colors.primary,
     borderRadius: 15,
     padding: 7,
-    marginLeft: 10
+    marginLeft: 10,
   },
   moreText: {
     color: Colors.snow,
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+  },
 });

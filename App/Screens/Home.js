@@ -1,41 +1,41 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  StyleSheet, Text, View, TouchableOpacity, TextInput, Button
+  StyleSheet, Text, View, TouchableOpacity, TextInput, Button,
 } from 'react-native';
-//var PushNotification = require('react-native-push-notification');
+// var PushNotification = require('react-native-push-notification');
 
-/*var Mixpanel = require('react-native-mixpanel');
+/* var Mixpanel = require('react-native-mixpanel');
 Mixpanel.sharedInstanceWithToken("c0fd73f57f259ce3889d79fdf1d188e6");
 */
-import { iconsMap, iconsLoaded } from '../app-icons';
 import * as Animatable from 'react-native-animatable';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import moment from 'moment';
+import { iconsMap, iconsLoaded } from '../app-icons';
 import { ApplicationStyles, Colors, Metrics, Images } from '../Themes';
 
 const Platform = require('react-native').Platform;
-const I18n = require('../I18n');
 const validate = require('validate.js');
+const I18n = require('../I18n');
 
 const constraints = {
   content: {
     presence: {
-      message: 'Required'
-    }
-  }
+      message: 'Required',
+    },
+  },
 };
 
-//realm.objects('Account').map(account => { return account.name; })
+// realm.objects('Account').map(account => { return account.name; })
 export default class Home extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      
+
     };
 
-    /*iconsLoaded.then(() => {
+    /* iconsLoaded.then(() => {
       this.props.navigator.setButtons({
         leftButtons: [{
           id: 'sideMenu',
@@ -48,8 +48,7 @@ export default class Home extends Component {
         },
         animated: true
       });
-    });*/
-
+    }); */
   }
 
   componentWillMount() {
@@ -76,6 +75,6 @@ export default class Home extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.snow
-  }
+    backgroundColor: Colors.snow,
+  },
 });

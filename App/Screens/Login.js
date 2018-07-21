@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Text, View, TextInput, ScrollView, StyleSheet, Button, Image, DatePickerAndroid
+  Text, View, TextInput, ScrollView, StyleSheet, Button, Image, DatePickerAndroid,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { ApplicationStyles, Colors, Metrics, Images } from '../Themes';
-
 import moment from 'moment';
+import {
+  ApplicationStyles, Colors, Metrics, Images,
+} from '../Themes';
 
 const _ = require('lodash');
 const validate = require('validate.js');
@@ -16,9 +17,9 @@ const Mixpanel = require('../Components/Analytics');
 const constraints = {
   name: {
     presence: {
-      message: I18n.t('required')
-    }
-  }
+      message: I18n.t('required'),
+    },
+  },
 };
 
 export default class Login extends Component {
@@ -27,11 +28,11 @@ export default class Login extends Component {
 
     this.state = {
       name: '',
-      nameError: ''
+      nameError: '',
     };
 
     this.props.navigator.setTitle({
-      title: I18n.t('app_name')
+      title: I18n.t('app_name'),
     });
 
     this.loginDebounced = _.debounce(this.login, 300);
@@ -94,29 +95,29 @@ export default class Login extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.snow
+    backgroundColor: Colors.snow,
   },
   imageView: {
     margin: Metrics.doubleSection,
     alignItems: 'center',
-    alignContent: 'center'
+    alignContent: 'center',
   },
   image: {
     width: Metrics.images.placeholder,
     height: Metrics.images.placeholder,
-    resizeMode: 'contain'
+    resizeMode: 'contain',
   },
   view: {
     margin: Metrics.baseMargin,
     marginTop: 0,
-    marginBottom: 10
+    marginBottom: 10,
   },
   textView: {
     color: Colors.charcoal,
     fontSize: 14,
-    fontStyle: 'italic'
+    fontStyle: 'italic',
   },
   inputControl: {
 
-  }
+  },
 });

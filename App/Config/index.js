@@ -4,5 +4,5 @@ import AppConfig from './AppConfig';
 import Constant from './Constant';
 
 module.exports = {
-  analytics: Constant.mixpanel
+  analytics: Constant.mixpanel,
 };
