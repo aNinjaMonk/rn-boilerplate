@@ -21,8 +21,6 @@ Getting Started :
 - git clone https://github.com/aNinjaMonk/rn-boilerplate.git
 - npm install
 - react-native run-android
-(If react-native not present.. You'll need 
-- npm install -g react-native-cli
-)
+- (If react-native not present.. You'll need 'npm install -g react-native-cli')
 
 Enjoy!!
