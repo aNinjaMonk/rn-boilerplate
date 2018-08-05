@@ -16,3 +16,13 @@ Plugins installed already
 - react-native-vector-icons - Vector Icons
 - react-native-shared-preferences - Save user preferences
 - react-native-firebase - Push Notification
+
+Getting Started :
+- git clone https://github.com/aNinjaMonk/rn-boilerplate.git
+- npm install
+- react-native run-android
+(If react-native not present.. You'll need 
+- npm install -g react-native-cli
+)
+
+Enjoy!!
