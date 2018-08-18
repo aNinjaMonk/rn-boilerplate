@@ -15,7 +15,7 @@ Plugins installed already
 - validate.js - Forms Validation
 - react-native-vector-icons - Vector Icons
 - react-native-shared-preferences - Save user preferences
-- react-native-firebase - Push Notification
+- react-native-onesignal - Push Notification
 
 Getting Started :
 - git clone https://github.com/aNinjaMonk/rn-boilerplate.git
