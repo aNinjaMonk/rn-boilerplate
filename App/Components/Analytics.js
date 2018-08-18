@@ -1,7 +1,7 @@
 import Mixpanel from 'react-native-mixpanel';
 
-const TOKEN = require('../Config').analytics;
+const AppConfig = require('../Config');
 
-Mixpanel.sharedInstanceWithToken(TOKEN);
+Mixpanel.sharedInstanceWithToken(AppConfig.mixpanel);
 
 module.exports = Mixpanel;

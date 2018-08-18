@@ -18,7 +18,7 @@ import cl.json.RNSharePackage;
 import in.sriraman.sharedpreferences.RNSharedPreferencesReactPackage;
 import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
 import com.kevinejohn.RNMixpanel.RNMixpanel;
-import io.invertase.firebase.RNFirebasePackage;
+import com.geektime.rnonesignalandroid.ReactNativeOneSignalPackage;
 
 public class MainApplication extends NavigationApplication implements Application.ActivityLifecycleCallbacks {
   private Activity mCurrentActivity;
@@ -43,12 +43,12 @@ public class MainApplication extends NavigationApplication implements Applicatio
   public List<ReactPackage> createAdditionalReactPackages() {
     return Arrays.<ReactPackage>asList(
       new MainReactPackage(),
+      new ReactNativeOneSignalPackage(),
       new VectorIconsPackage(),
       new RNSharePackage(),
       new RNSharedPreferencesReactPackage(),
       new RNI18nPackage(),
-      new RNMixpanel(),
-      new RNFirebasePackage()
+      new RNMixpanel()
     );
   }
 

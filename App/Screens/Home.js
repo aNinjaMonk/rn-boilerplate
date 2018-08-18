@@ -13,7 +13,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import moment from 'moment';
 import { iconsMap, iconsLoaded } from '../app-icons';
 import { ApplicationStyles, Colors, Metrics, Images } from '../Themes';
-
+import OneSignal from 'react-native-onesignal';
+import { AppConfig } from '../Config';
 const Platform = require('react-native').Platform;
 const validate = require('validate.js');
 const I18n = require('../I18n');
@@ -52,7 +53,11 @@ export default class Home extends Component {
   }
 
   componentWillMount() {
+    OneSignal.init(AppConfig.onesignal);
 
+    OneSignal.addEventListener('received', this.onReceived);
+    OneSignal.addEventListener('opened', this.onOpened);
+    OneSignal.addEventListener('ids', this.onIds);
   }
 
   componentDidMount() {
@@ -60,7 +65,24 @@ export default class Home extends Component {
   }
 
   componentWillUnmount() {
+    OneSignal.removeEventListener('received', this.onReceived);
+    OneSignal.removeEventListener('opened', this.onOpened);
+    OneSignal.removeEventListener('ids', this.onIds);
+  }
 
+  onReceived = (notification) => {
+    console.log('Notification received: ', notification);
+  }
+
+  onOpened = (openResult) => {
+    console.log('Message: ', openResult.notification.payload.body);
+    console.log('Data: ', openResult.notification.payload.additionalData);
+    console.log('isActive: ', openResult.notification.isAppInFocus);
+    console.log('openResult: ', openResult);
+  }
+
+  onIds = (device) => {
+    console.log('Device info: ', device);
   }
 
   render() {
