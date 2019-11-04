@@ -31,9 +31,9 @@ export default class Login extends Component {
       nameError: '',
     };
 
-    this.props.navigator.setTitle({
+    /*this.props.navigator.setTitle({
       title: I18n.t('app_name'),
-    });
+    });*/
 
     this.loginDebounced = _.debounce(this.login, 300);
   }

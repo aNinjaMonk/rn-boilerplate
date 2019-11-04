@@ -8,7 +8,7 @@ import Playground from './Playground';
 
 function registerScreens() {
   Navigation.registerComponent('screen.home', () => Home);
-  Navigation.registerComponent('screen.Drawer', () => Drawer);
+  Navigation.registerComponent('screen.drawer', () => Drawer);
   Navigation.registerComponent('screen.playground', () => Playground);
   Navigation.registerComponent('screen.setting', () => Setting);
   Navigation.registerComponent('screen.login', () => Login);

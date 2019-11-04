@@ -15,7 +15,7 @@ import { iconsMap, iconsLoaded } from '../app-icons';
 import { ApplicationStyles, Colors, Metrics, Images } from '../Themes';
 import OneSignal from 'react-native-onesignal';
 import { AppConfig } from '../Config';
-const Platform = require('react-native').Platform;
+const { Platform } = require('react-native');
 const validate = require('validate.js');
 const I18n = require('../I18n');
 
@@ -52,7 +52,7 @@ export default class Home extends Component {
     }); */
   }
 
-  componentWillMount() {
+  componentDidMount() {
     OneSignal.init(AppConfig.onesignal);
 
     OneSignal.addEventListener('received', this.onReceived);

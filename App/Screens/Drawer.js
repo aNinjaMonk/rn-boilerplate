@@ -5,10 +5,11 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import moment from 'moment';
+import { iconsMap, iconsLoaded } from '../app-icons';
 import {
   Colors, Metrics, Images, Fonts, ApplicationStyles
 } from '../Themes';
-
+import { Navigation } from 'react-native-navigation';
 const I18n = require('../I18n');
 
 class Drawer extends Component {
@@ -23,17 +24,47 @@ class Drawer extends Component {
       date: '',
     };
 
-    this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
+    this.navigationEventListener = Navigation.events().bindComponent(this);
   }
 
   componentDidMount() {
 
   }
 
-  onNavigatorEvent = (event) => {
-    if (event.id === 'didAppear') {
-      this.forceUpdate();
-    }
+  toggleLeftDrawer = () => {
+    Navigation.mergeOptions(this.props.componentId, {
+      sideMenu: {
+        left: {
+          visible: false
+        }
+      }
+    });
+  }
+
+  navigate = (name, title, props) => {
+    this.toggleLeftDrawer();
+    Navigation.push(this.state.componentId, {
+      component: {
+        name: name,
+        options: {
+          topBar:{
+            title: {
+              text: title
+            },
+            leftButtons: {
+              id: "back",
+              icon: iconsMap["arrow-left"],
+              iconColor: Colors.snow
+            }
+          },
+          bottomTabs: {
+            visible: false,
+            drawBehind: true
+          }
+        },
+        passProps: props
+      }
+    });
   }
 
   openShare = () => {

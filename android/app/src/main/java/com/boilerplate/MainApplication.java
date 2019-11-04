@@ -1,89 +1,50 @@
 package com.boilerplate;
 
 import android.app.Application;
-import android.app.Activity;
-import android.os.Bundle;
+import android.util.Log;
+
+import com.facebook.react.PackageList;
+import com.facebook.hermes.reactexecutor.HermesExecutorFactory;
+import com.facebook.react.bridge.JavaScriptExecutorFactory;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 
-import java.util.Arrays;
-import java.util.List;
-
 import com.reactnativenavigation.NavigationApplication;
-import com.oblador.vectoricons.VectorIconsPackage;
-import cl.json.RNSharePackage;
-import in.sriraman.sharedpreferences.RNSharedPreferencesReactPackage;
-import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
-import com.kevinejohn.RNMixpanel.RNMixpanel;
-import com.geektime.rnonesignalandroid.ReactNativeOneSignalPackage;
+import com.reactnativenavigation.react.NavigationReactNativeHost;
+import com.reactnativenavigation.react.ReactGateway;
 
-public class MainApplication extends NavigationApplication implements Application.ActivityLifecycleCallbacks {
-  private Activity mCurrentActivity;
+import java.util.List;
+import java.util.Arrays;
+
+public class MainApplication extends NavigationApplication {
 
   @Override
-  public void onCreate(){
-    super.onCreate();
-    registerActivityLifecycleCallbacks(this);
+  protected ReactGateway createReactGateway() {
+    ReactNativeHost host = new NavigationReactNativeHost(this, isDebug(), createAdditionalReactPackages()) {
+      @Override
+      protected String getJSMainModuleName() {
+        return "index";
+      }
+    };
+    return new ReactGateway(this, isDebug(), host);
   }
 
   @Override
   public boolean isDebug() {
-      return BuildConfig.DEBUG;
+    return BuildConfig.DEBUG;
   }
 
-  /*@Override
-  public String getJSBundleFile() {
-      return CodePush.getJSBundleFile();
-  }*/
+  protected List<ReactPackage> getPackages() {
+    @SuppressWarnings("UnnecessaryLocalVariable")
+    List<ReactPackage> packages = new PackageList(this).getPackages();
+    return packages;
+  }
 
   @Override
   public List<ReactPackage> createAdditionalReactPackages() {
-    return Arrays.<ReactPackage>asList(
-      new MainReactPackage(),
-      new ReactNativeOneSignalPackage(),
-      new VectorIconsPackage(),
-      new RNSharePackage(),
-      new RNSharedPreferencesReactPackage(),
-      new RNI18nPackage(),
-      new RNMixpanel()
-    );
-  }
-
-  @Override
-  public void onActivityCreated(Activity activity, Bundle savedInstance){
-    mCurrentActivity = activity;
-  }
-
-  @Override
-  public void onActivityDestroyed(Activity activity){
-
-  }
-
-  @Override
-  public void onActivitySaveInstanceState(Activity activity,Bundle bundle){
-
-  }
-
-  @Override
-  public void onActivityPaused(Activity activity){
-
-  }
-
-  @Override
-  public void onActivityResumed(Activity activity){
-
-  }
-
-  @Override
-  public void onActivityStarted(Activity activity){
-
-  }
-
-  @Override
-  public void onActivityStopped(Activity activity){
-
+    return getPackages();
   }
 }
